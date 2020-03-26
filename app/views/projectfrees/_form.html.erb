@@ -1,0 +1,43 @@
+
+<%= bootstrap_form_for(@projectfree) do |f| %>
+  <% if projectfree.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(projectfree.errors.count, "error") %> prohibited this projectfree from being saved:</h2>
+
+      <ul>
+        <% projectfree.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.text_field :name, id: :projectfree_name %>
+  </div>
+
+  <div class="field">
+   
+    <%= f.text_field :description, id: :projectfree_description %>
+  </div>
+
+  <div class="field">
+    
+    <%= f.text_field :web_link, id: :projectfree_web_link %>
+  </div>
+
+  <div class="field">
+ 
+    <%= f.text_field :github_link, id: :projectfree_github_link %>
+  </div>
+
+  <div class="field">
+ 
+    <%= f.text_field :freegolf_ad_id, id: :projectfree_freegolf_ad_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

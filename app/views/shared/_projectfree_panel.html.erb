@@ -1,0 +1,82 @@
+<!-- ICON BOXES -->
+ 
+        <div class="col-md-6">
+          <div class="card bg-dark text-white text-center">
+            <div class="card-body">
+              <h3><%= truncate(projectfree.name, length: 20) %></h3>
+              <h3><%= truncate(projectfree.description, length: 26) %></h3>
+          
+             
+               <ul class="navbar-nav">
+               
+
+            
+
+             
+              <h5><%= link_to "#{ projectfree.videofrees.count } Screencasts", videofrees_path(projectfree: projectfree.id), class: "screewhite" %></h5>
+
+          
+
+          
+
+              </ul>
+
+              <div class="row">
+
+    <div class="col-md-4">
+        <%= link_to "Screencasts", videofrees_path(projectfree: projectfree.id), class: "btn btn-sm btn-primary" %>
+      </div>
+
+
+    <% if user_signed_in? %>
+      <div class="col-md-4">
+        <%= link_to "Visit App", url_for(projectfree.web_link), class: "btn btn-sm btn-primary" %>
+      </div>
+
+    <% else %>
+    <div class="col-md-4">
+      <%= link_to "Visit App", new_user_registration_path, method: :get, class: 'btn btn-primary btn-sm' %>
+    </div>
+    <% end %>
+       
+       
+     
+
+
+
+      <% if user_signed_in? %>
+      <div class="col-md-4">
+        <%= link_to "Github Repo", projectfree.github_link, class: "btn btn-sm btn-primary" %>
+      </div>
+
+    <% else %>
+    <div class="col-md-4">
+      <%= link_to "Github Repo", new_user_registration_path, method: :get, class: 'btn btn-primary btn-sm' %>
+      </div>
+    <% end %>
+
+     
+     
+    </div>
+
+    <% if current_user_admin? %>
+
+      <div class="row">
+   <div class="col-md-12">
+      <%= link_to "Edit", edit_projectfree_path(projectfree) %>
+      </div>
+      </div>
+
+
+    <% end %>
+
+
+            </div>
+
+          </div>
+
+          
+             <br>
+        <br>
+        </div>
+

@@ -1,0 +1,40 @@
+
+<%= bootstrap_form_for(@videofree) do |f| %>
+  <% if videofree.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(videofree.errors.count, "error") %> prohibited this videofree from being saved:</h2>
+
+      <ul>
+      <% videofree.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+ 
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+   
+    <%= f.text_field :videofree_source_id %>
+  </div>
+
+  <div class="field">
+   
+ 
+
+    <%= f.collection_select :projectfree_id, Projectfree.all, :id, :name, prompt: "None" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save Free Video", class: "btn btn-primary" %>
+  </div>
+<% end %>

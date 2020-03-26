@@ -1,0 +1,28 @@
+.proplans {
+  background-image: url(image_path('credits.png'));
+  max-width: 65%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40px;
+}
+
+.lans {
+    max-width: 99%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(image_path('business-app.png'));
+}
+
+
+.mediacolor{
+
+    background-color: rgba(0,0,0,.03);
+}
+
+.signbla {
+  width:20px;
+}
+
+.subscribeto {
+  width:50px;
+}

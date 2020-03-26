@@ -1,0 +1,42 @@
+
+<% if @project.present? %>
+
+<div class="container">
+<div class="card">
+<div class="card-body">
+
+
+
+  
+  <a class="btn btn-dark btn-block" href="#"><%= @project.name %></a>
+</div>
+  
+  <iframe width="100%" height="480" src=<%= "https://www.youtube.com/embed/#{@project.golf_ad_id}?rel=0&amp;autoplay=1;showinfo=0"%> frameborder="0" allowfullscreen></iframe>
+ 
+
+</div>
+
+
+</div>
+<% end %>
+
+<div class="container">
+
+
+<% content_for :page_title do %>
+  
+  <%= @project.present? ? "#{@project.name.titleize} Videos" : "Screencast Videos" %>
+
+<% end %>
+
+
+<%= render(partial: 'video_panel', collection: @videos, as: :video) || 'No videos at this time.' %>
+
+
+
+
+<%= paginate @videos, theme: 'twitter-bootstrap-4' %>
+</div>
+
+
+

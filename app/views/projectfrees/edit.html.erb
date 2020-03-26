@@ -1,0 +1,9 @@
+<h1>Editing Projectfree</h1>
+
+<%= render 'form', projectfree: @projectfree %>
+
+<%= link_to 'Show', @projectfree %> |
+<%= link_to 'Back', projectfrees_path %>
+
+
+  <%= link_to 'Destroy', projectfree, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-danger btn-sm" %>

@@ -1,0 +1,106 @@
+<section id="showcase" class="py-5">
+
+
+ <% content_for :page_title do %>
+
+   Ruby on Rails by Coding Actual Projects
+
+
+ <% end %>
+
+   
+<h2 class="text-center"><span class="badge badge-decondary">All Courses $99.99</span></h2>
+
+<h2 class="text-center"><span class="badge badge-secondary lifitime">30-Day Money-Back Guarantee</span></h2>
+<div class="col-md-12">
+
+
+<div class="card text-center">
+
+</div>
+
+   <div class="card text-center">
+            <div class="card-header">
+                
+            </div>
+            <div class="card-body">
+          
+              <!-- display video locally -->     
+             <iframe width="853" height="480" src=<%= "https://www.youtube.com/embed/#{@video_home_id}?rel=0&amp;showinfo=0"%> frameborder="0" allowfullscreen></iframe>
+
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+               
+            </div>
+            <div class="card-footer text-muted">
+                
+            </div>
+        </div>
+
+
+<!-- Display Projects -->
+            <h2 class="text-center"><span class="badge badge-secondary bg-warning lifitime">Projects</span></h2>
+<div class="container">
+      <div class="row">
+        
+      <%= render partial: "shared/project_panel", collection: @projects, as: "project" %>
+
+        
+     </div>
+
+
+
+</div>
+
+        <h2 class="text-center"><span class="badge badge-secondary bg-danger">Free Projects</span></h2>
+
+<div class="container">
+      <div class="row">
+        
+      <%= render partial: "shared/projectfree_panel", collection: @projectfrees, as: "projectfree" %>
+
+        
+     </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>

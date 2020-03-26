@@ -1,0 +1,24 @@
+<%= form_with(model: subscription, local: true, class: "meeting-form") do |form| %>
+  <% if subscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+
+      <ul>
+        <% subscription.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <%= form.hidden_field :name, class: "form-control", placeholder: "First Name" %>
+
+   <%= render "payment_form" %>
+   <br>
+   <br>
+  <div class="actions">
+    <%= form.submit 'Subscribe', class: 'btn btn-warning' %>
+  </div>
+<% end %>

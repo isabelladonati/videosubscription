@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @projectfree.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @projectfree.description %>
+</p>
+
+<p>
+  <strong>Web link:</strong>
+  <%= @projectfree.web_link %>
+</p>
+
+<p>
+  <strong>Github link:</strong>
+  <%= @projectfree.github_link %>
+</p>
+
+<%= link_to 'Edit', edit_projectfree_path(@projectfree) %> |
+<%= link_to 'Back', projectfrees_path %>

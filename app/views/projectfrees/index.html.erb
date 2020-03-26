@@ -1,0 +1,21 @@
+
+
+<% content_for :page_title do %>
+  Things We've Made
+<% end %>
+
+<h1 class="text-center lifiteme">Free Projects</h1>
+
+
+<div class="container">
+<div class="row">
+<%= render partial: "shared/projectfree_panel", collection: @projectfrees, as: "projectfree" %>
+
+</div>
+</div>
+<%= link_to 'New Project', new_projectfree_path if user_signed_in? %>
+
+
+
+
+

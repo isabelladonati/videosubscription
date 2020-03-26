@@ -1,0 +1,7 @@
+<h1>Editing Video</h1>
+
+<%= render 'form', video: @video %>
+
+<%= link_to 'Show', @video %> |
+<%= link_to 'Back', videos_path %>
+<%= link_to "Delete this video", video_path(@video), method: :delete, data: { confirm: "Are you sure you want to delete the video?" }, class: "btn btn-danger" %> |

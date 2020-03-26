@@ -1,0 +1,2 @@
+module VideofreesHelper
+end

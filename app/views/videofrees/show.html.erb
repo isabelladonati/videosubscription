@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @videofree.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @videofree.description %>
+</p>
+
+<p>
+  <strong>Videofree source:</strong>
+  <%= @videofree.videofree_source_id %>
+</p>
+
+  <%= image_tag("https://i.ytimg.com/vi/#{@videofree.videofree_source_id}/hqdefault.jpg", class: "media-object", style: "width: 120px;")%>
+
+
+  <% if current_user_admin? %>
+
+<%= link_to 'Edit', edit_videofree_path(@videofree) %> |
+<%= link_to 'Back', videofrees_path %>
+
+
+<% end %>

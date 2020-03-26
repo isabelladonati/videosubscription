@@ -1,0 +1,90 @@
+ <!-- NAVBAR WITH RESPONSIVE TOGGLE -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark mb-3">
+        <div class="container">
+            
+            <%= link_to " Videosubscription", root_path, class: "navbar-brand text-warning" %>
+
+
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+
+                <% if current_user_admin? %>
+                                  <!-- Example split danger button -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-danger">Admin</button>
+                  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu">
+                   
+                    <%= link_to 'Admin Panel', edit_config_nerd_path, class: "dropdown-item" %>
+                    <%= link_to 'New Project', new_project_path, class: "dropdown-item" %>
+                    <%= link_to 'New Video', new_video_path, class: "dropdown-item" %>
+                    <%= link_to 'Free Projects', new_projectfree_path, class: "dropdown-item" %>
+                    <%= link_to 'Free Video', new_videofree_path, class: "dropdown-item" %>
+
+
+                  </div>
+                  </div>
+                <% end %>
+
+
+
+
+                    <% if user_signed_in? %>
+                     <li class="nav-item">
+                    <%= link_to "Videos", videos_path, class: "nav-link text-white" %>
+                    </li>
+
+                     <% end %>
+                   
+                    <% if user_signed_in? %>
+                    <li class="nav-item">
+                      
+
+                     <%= link_to "Edit Account", edit_user_registration_path, class: 'nav-link text-white' %>
+                    </li>
+
+                     <li class="nav-item">
+                      
+
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+                    </li>
+
+                    <% else %>
+
+                      <li class="nav-item">
+                      
+
+                    <%= link_to "Sign In", new_user_session_path, class: 'btn btn-outline-primary' %>
+                    </li>
+                    
+                     <li class="nav-item signbla"></li>
+
+                      <li class="nav-item">
+                      
+
+                    <%= link_to "Sign Up", new_user_registration_path, method: :get, class: 'btn btn-outline-primary' %>
+                    </li>
+
+
+                    <% end %>
+                     <li class="nav-item subscribeto"></li>
+
+                    <% unless current_user_subscribed? %>
+
+                    <li><%= button_to "Subscribe!", new_subscription_path, class: "btn btn-warning navbar-btn", method: :get %></li>
+      
+                    <% else %>
+          
+                    <% end %>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>

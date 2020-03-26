@@ -1,0 +1,17 @@
+<div class="media">
+  <div class="media-left">
+    <%= link_to videofree_path(videofrees) do %>
+      <%= image_tag("https://i.ytimg.com/vi/#{videofrees.videofree_source_id}/hqdefault.jpg", class: "media-object", style: "width: 120px;")%>
+    <% end %>
+  </div>
+  <div class="media-body">
+    <%= link_to videofree_path(videofrees), class: "inherit_style" do %>
+      <h4 class="media-heading"><%= videofrees.name.titleize %></h4>
+      <%= videofrees.description %>
+    <% end %>
+    <div>
+      <%= link_to "Edit Video", edit_videofree_path(videofrees) if current_user_admin? %>
+    </div>
+  </div>
+</div> 
+<hr />
